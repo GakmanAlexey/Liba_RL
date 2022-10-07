@@ -129,6 +129,8 @@
   <ItemGroup>
     <ClCompile Include="CFG.cpp" />
     <ClCompile Include="event.cpp" />
+    <ClCompile Include="L.cpp" />
+    <ClCompile Include="Load.cpp" />
     <ClCompile Include="Proj_n1.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -140,6 +142,8 @@
   <ItemGroup>
     <ClInclude Include="CFG.h" />
     <ClInclude Include="event.h" />
+    <ClInclude Include="L.h" />
+    <ClInclude Include="Load.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
