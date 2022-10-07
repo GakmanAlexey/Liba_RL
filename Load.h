@@ -12,6 +12,9 @@ public:
 	Image Img_fonL;
 	Texture Texturs_fonL;
 
+	Image Img_fonB;
+	Texture Texturs_fonB;
+
 	void font();
 	void img();
 	void texturs();

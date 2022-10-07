@@ -3,12 +3,14 @@
 #include "CFG.h"
 #include "event.h"
 #include "Load.h"
+#include "L.h"
 
 int main()
 {
     CFG cfg;
     event ev;
     Load lo;
+    L l;
     sf::RenderWindow window(sf::VideoMode(cfg.windows_width, cfg.windows_height), cfg.project_name);
 
     lo.font();
@@ -21,7 +23,7 @@ int main()
         ev.sf_ev(evsf, window);
         // ----------------------------------
         window.clear();
-       
+        l.button(10, 10, 100, 50, "gogogo", 0, window);
 
         
         window.display();

@@ -1,7 +1,8 @@
 #include "L.h"
 #include <string>
+#include <SFML/Graphics.hpp>
 
-int L::button(int s_x, int s_y, int width, int height, std::string text, int style) {
+int L::button(int s_x, int s_y, int width, int height, std::string text, int style, sf::RenderWindow &window) {
 
 
 	return 0;
