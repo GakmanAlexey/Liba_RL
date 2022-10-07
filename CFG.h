@@ -21,5 +21,11 @@ public:
 
 	int s_rend_w = 0; //Точна начала отрисовки по ширине
 	int s_rend_h = 0; //Точна начала отрисовки по высоте
+
+
+
+	std::string direct_root = "resurse/";
+	std::string direct_font = "font/";
+	std::string direct_img = "img/";
 };
 
