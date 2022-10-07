@@ -23,7 +23,7 @@ int main()
         ev.sf_ev(evsf, window);
         // ----------------------------------
         window.clear();
-        l.button(10, 10, 100, 50, "gogogo", 0, window);
+        l.button(10, 10, 350, 50, "gogogo", 0, window, lo.Texturs_fonB, lo.base_font);
 
         
         window.display();

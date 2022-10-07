@@ -30,6 +30,9 @@
     <ClCompile Include="Load.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="F.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="plan.txt">
@@ -50,6 +53,9 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Load.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="F.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

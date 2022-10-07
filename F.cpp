@@ -56,8 +56,8 @@ std::vector<std::string> F::textArea(std::string text, int long_line) {
 		if (new_str.size() < long_line) {
 			old_str = new_str;
 		}
-		if (timed_str.size() > i + 1) {
-			timed_strs = old_str + ' ' + timed_str[i + 1];
+		if(timed_str.size() > i + 1){
+		timed_strs = old_str + ' ' + timed_str[i + 1];
 		}
 		if (timed_strs.size() >= long_line) {
 			result.push_back(old_str);
@@ -66,16 +66,16 @@ std::vector<std::string> F::textArea(std::string text, int long_line) {
 
 		i++;
 	}
-	if (result[result.size() - 1] != old_str) {
+	if (result[result.size()-1] != old_str) {
 		result.push_back(old_str);
 	}
-
+	
 	return result;
 
 };
 
-sf::Sprite F::show_F(sf::Sprite& Sprite_def, sf::Texture& texturs, int x, int y) {
-
+sf::Sprite F::show_F(sf::Sprite &Sprite_def,sf::Texture &texturs, int x, int y) {
+	
 	Sprite_def.setTexture(texturs);
 	Sprite_def.setPosition(x, y);
 	return Sprite_def;
@@ -89,13 +89,13 @@ sf::Sprite  F::show_S(sf::Sprite& Sprite_def, sf::Texture& texturs, int x, int y
 	return Sprite_def;
 };
 
-sf::Text F::show_T(sf::Text& t_s, sf::Font& font, int x, int y, sf::String& str, int font_size, int style_text) {
+sf::Text F::show_T(sf::Text &t_s,sf::Font &font, int x, int y, sf::String &str, int font_size, int style_text) {
 	t_s.setFont(font);
 	t_s.setPosition(x, y);
 	t_s.setString(str);
 	t_s.setCharacterSize(font_size);
-	if (style_text == 0) {
-		t_s.setStyle(sf::Text::Bold);
+	if (style_text == 0) { 
+		t_s.setStyle(sf::Text::Bold); 
 	}
 	return t_s;
 }
