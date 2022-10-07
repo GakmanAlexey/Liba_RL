@@ -23,7 +23,7 @@ public:
 	int s_rend_h = 0; //Точна начала отрисовки по высоте
 
 
-
+	//Дериктории
 	std::string direct_root = "resurse/";
 	std::string direct_font = "font/";
 	std::string direct_img = "img/";
