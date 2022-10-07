@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 class CFG
 {
 	/*
@@ -16,6 +17,7 @@ public:
 
 	int windows_width = 1024; // Ширина основного окна
 	int windows_height = 720; // Высота основного окна
+	std::string project_name = "text win lib";
 
 	int s_rend_w = 0; //Точна начала отрисовки по ширине
 	int s_rend_h = 0; //Точна начала отрисовки по высоте

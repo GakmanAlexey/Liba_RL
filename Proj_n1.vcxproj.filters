@@ -21,6 +21,9 @@
     <ClCompile Include="CFG.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="event.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="plan.txt">
@@ -32,6 +35,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CFG.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="event.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
