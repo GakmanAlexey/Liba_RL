@@ -33,7 +33,7 @@ void custom_event::eve(event& ev) {
 		intelect_pc = 3;
 	}
 
-	if (ev.focus_zone == "zone1") {
+	if (ev.focus_zone != "") {
 		std::cout << ev.focus_zone << std::endl;
 	}
 

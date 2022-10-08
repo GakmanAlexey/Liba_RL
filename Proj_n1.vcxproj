@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="brain_krest.cpp" />
     <ClCompile Include="CFG.cpp" />
     <ClCompile Include="custom_event.cpp" />
     <ClCompile Include="event.cpp" />
@@ -143,6 +144,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="brain_krest.h" />
     <ClInclude Include="CFG.h" />
     <ClInclude Include="custom_event.h" />
     <ClInclude Include="event.h" />
