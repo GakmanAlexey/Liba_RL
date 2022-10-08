@@ -2,7 +2,15 @@
 #include <string>
 #include <SFML/Graphics.hpp>
 
-int L::button(int s_x, int s_y, int width, int height, std::string text, int style, sf::RenderWindow &window, sf::Texture& texturs, sf::Font& font) {
+
+int L::fon(sf::RenderWindow& window, sf::Texture& texturs) {
+	sf::Sprite Sprite_def;
+	Sprite_def.setTexture(texturs);
+	Sprite_def.setPosition(0, 0);
+	window.draw(Sprite_def);
+	return 0;
+};
+int L::button(int s_x, int s_y, int width, int height, sf::String text, int style, sf::RenderWindow &window, sf::Texture& texturs, sf::Font& font) {
 
 	sf::Color boot;
 	boot.g = 22;
@@ -51,11 +59,11 @@ int L::button(int s_x, int s_y, int width, int height, std::string text, int sty
 	window.draw(line4, 2, sf::Lines);
 
 	int lenStr;
-	lenStr = text.size();
+	lenStr = text.getSize();
 	sf::Text t_s;
-	sf::String str = text;
+	sf::String str = sf::String::String(text);//fromUtf8(text.begin(), text.end());
 	t_s.setFont(font);
-	t_s.setPosition(s_x + (width/2) -(lenStr *5), s_y + ((height - 20) / 2));
+	t_s.setPosition(s_x + (width/2) -(lenStr *3), s_y + ((height - 20) / 2));
 	t_s.setString(str);
 	t_s.setCharacterSize(14);
 	window.draw(t_s);

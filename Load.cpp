@@ -9,9 +9,13 @@ void Load::font() {
 };
 void Load::img() {
 	Img_fonL.loadFromFile(cfg.direct_root + cfg.direct_img + "fon1.png");
-	Img_fonB.loadFromFile(cfg.direct_root + cfg.direct_img + "fon_botton.png");
+	Img_fonB.loadFromFile(cfg.direct_root + cfg.direct_img + "fon_botton1.png");
+	Img_fonG.loadFromFile(cfg.direct_root + cfg.direct_img + "fon_game.png");
+	Img_Logo.loadFromFile(cfg.direct_root + cfg.direct_img + "logo.png");
 };
 void Load::texturs() {
 	Texturs_fonL.loadFromImage(Img_fonL);
 	Texturs_fonB.loadFromImage(Img_fonB);
+	Texturs_fonG.loadFromImage(Img_fonG);
+	Texturs_Logo.loadFromImage(Img_Logo);
 };
