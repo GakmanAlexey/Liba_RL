@@ -14,5 +14,6 @@ public:
 	std::vector <std::string> botton_n;
 	std::string focus_botton = "";
 	void sf_ev(sf::Event& event, sf::RenderWindow& window);
+	void boot_clear();
 };
 

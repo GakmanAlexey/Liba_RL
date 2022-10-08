@@ -1,6 +1,7 @@
 #include "L.h"
 #include <string>
 #include <SFML/Graphics.hpp>
+#include "event.h"
 
 
 int L::fon(sf::RenderWindow& window, sf::Texture& texturs) {
@@ -10,7 +11,7 @@ int L::fon(sf::RenderWindow& window, sf::Texture& texturs) {
 	window.draw(Sprite_def);
 	return 0;
 };
-int L::button(int s_x, int s_y, int width, int height, sf::String text, int style, sf::RenderWindow &window, sf::Texture& texturs, sf::Font& font) {
+int L::button(int s_x, int s_y, int width, int height, sf::String text, int style, sf::RenderWindow &window, sf::Texture& texturs, sf::Font& font, std::string name, event& ev) {
 
 	sf::Color boot;
 	boot.g = 22;
@@ -67,6 +68,11 @@ int L::button(int s_x, int s_y, int width, int height, sf::String text, int styl
 	t_s.setString(str);
 	t_s.setCharacterSize(14);
 	window.draw(t_s);
+	ev.botton_x.push_back(s_x);
+	ev.botton_y.push_back(s_y);
+	ev.botton_w.push_back(width);
+	ev.botton_h.push_back(height);
+	ev.botton_n.push_back(name);
 	return 0;
 };
 int L::win_alert_ok(int s_x, int s_y, std::string text, std::string text_ok) {
