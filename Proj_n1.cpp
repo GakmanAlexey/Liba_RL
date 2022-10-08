@@ -6,6 +6,7 @@
 #include "Load.h"
 #include "L.h"
 #include "F.h"
+#include "custom_event.h"
 
 int main()
 {
@@ -14,6 +15,7 @@ int main()
     Load lo;
     L l;
     F f;
+    custom_event c_e;
     sf::RenderWindow window(sf::VideoMode(cfg.windows_width, cfg.windows_height), cfg.project_name);
 
     lo.font();
@@ -41,6 +43,7 @@ int main()
         }
         
         window.display();
+        c_e.eve(ev);
     }
 
     return 0;
