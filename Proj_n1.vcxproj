@@ -134,6 +134,7 @@
     <ClCompile Include="L.cpp" />
     <ClCompile Include="Load.cpp" />
     <ClCompile Include="Proj_n1.cpp" />
+    <ClCompile Include="scene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="plan.txt" />
@@ -148,6 +149,7 @@
     <ClInclude Include="F.h" />
     <ClInclude Include="L.h" />
     <ClInclude Include="Load.h" />
+    <ClInclude Include="scene.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

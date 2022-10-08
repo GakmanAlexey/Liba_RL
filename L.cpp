@@ -75,6 +75,15 @@ int L::button(int s_x, int s_y, int width, int height, sf::String text, int styl
 	ev.botton_n.push_back(name);
 	return 0;
 };
+int L::clice_zone(int s_x, int s_y, int width, int height, std::string name, event& ev) {
+
+	ev.zone_x.push_back(s_x);
+	ev.zone_y.push_back(s_y);
+	ev.zone_w.push_back(width);
+	ev.zone_h.push_back(height);
+	ev.zone_n.push_back(name);
+	return 0;
+};
 int L::win_alert_ok(int s_x, int s_y, std::string text, std::string text_ok) {
 
 

@@ -21,6 +21,14 @@ public:
 	Image Img_Logo;
 	Texture Texturs_Logo;
 
+	Image Img_pole;
+	Texture Texturs_pole;
+
+	Image Img_krest;
+	Texture Texturs_krest;
+	Image Img_nolik;
+	Texture Texturs_nolik;
+
 	void font();
 	void img();
 	void texturs();

@@ -17,9 +17,18 @@ void event::sf_ev(sf::Event &event, sf::RenderWindow &window) {
                 }
                 i++;
             }
+            i = 0;
+            while (i < zone_x.size()) {
+                if (position.x > zone_x[i] && position.x < zone_x[i] + zone_w[i] && position.y > zone_y[i] && position.y <= zone_y[i] + zone_h[i])
+                {
+                    focus_zone = zone_n[i];
+                }
+                i++;
+            }
         }
         else {
             focus_botton = "";
+            focus_zone = "";
         }
     }
 };
@@ -30,4 +39,10 @@ void event::boot_clear() {
     std::vector<int>().swap(botton_w);
     std::vector<int>().swap(botton_h);
     std::vector<std::string>().swap(botton_n);
+
+    std::vector<int>().swap(zone_x);
+    std::vector<int>().swap(zone_y);
+    std::vector<int>().swap(zone_w);
+    std::vector<int>().swap(zone_h);
+    std::vector<std::string>().swap(zone_n);
 };
