@@ -1,6 +1,7 @@
 #include "custom_event.h"
 #include "event.h"
 #include <iostream>
+
 void custom_event::eve(event& ev) {
 	if (ev.focus_botton == "boot1") {
 		focus_windows = 2;

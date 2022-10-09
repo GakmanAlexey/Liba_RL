@@ -1,5 +1,8 @@
 #include "scene.h"
-void scene::main(CFG& cfg, event& ev, Load& lo, L& l, F& f, custom_event& c_e, sf::RenderWindow& window) {
+#include "custom_event.h"
+#include "brain_krest.h"
+
+void scene::main(CFG& cfg, event& ev, Load& lo, L& l, F& f, custom_event& c_e, sf::RenderWindow& window, brain_krest& br_kr) {
     if (c_e.focus_windows == 1) {
         scena1(cfg, ev, lo, l, f, c_e, window);
     }
@@ -7,7 +10,7 @@ void scene::main(CFG& cfg, event& ev, Load& lo, L& l, F& f, custom_event& c_e, s
         scena2(cfg, ev, lo, l, f, c_e, window);
     }
     if (c_e.focus_windows == 3) {
-        scena3(cfg, ev, lo, l, f, c_e, window);
+        scena3(cfg, ev, lo, l, f, c_e, window, br_kr);
     }
     if (c_e.focus_windows == 4) {
         scena4(cfg, ev, lo, l, f, c_e, window);
@@ -59,19 +62,121 @@ void scene::scena2(CFG& cfg, event& ev, Load& lo, L& l, F& f, custom_event& c_e,
     window.display();
     c_e.eve(ev);
 };
-void scene::scena3(CFG& cfg, event& ev, Load& lo, L& l, F& f, custom_event& c_e, sf::RenderWindow& window) {
+
+//играть вдвоем
+void scene::scena3(CFG& cfg, event& ev, Load& lo, L& l, F& f, custom_event& c_e, sf::RenderWindow& window, brain_krest &br_kr) {
+    
     sf::Sprite sprite1;
     sf::Event evsf;
     ev.sf_ev(evsf, window);
     // ----------------------------------
     window.clear();
     ev.boot_clear();
+    if (!scena3_start) {
+        std::cout << "ddsadasdas";
+        scena3_start = true;
+        br_kr.preload();
+        br_kr.newGame();
+        br_kr.huGame();
+    };
     l.fon(window, lo.Texturs_fonG);
-    window.draw(f.show_F(sprite1, lo.Texturs_Logo, 186, 80));
+    window.draw(f.show_F(sprite1, lo.Texturs_pole, 0, 0));
+    l.clice_zone(275, 93, 128, 128, "zone1", ev);
+    l.clice_zone(429, 93, 128, 128, "zone2", ev);
+    l.clice_zone(586, 93, 128, 128, "zone3", ev);
+    l.clice_zone(275, 250, 128, 128, "zone4", ev);
+    l.clice_zone(429, 250, 128, 128, "zone5", ev);
+    l.clice_zone(586, 250, 128, 128, "zone6", ev);
+    l.clice_zone(275, 407, 128, 128, "zone7", ev);
+    l.clice_zone(429, 407, 128, 128, "zone8", ev);
+    l.clice_zone(586, 407, 128, 128, "zone9", ev);
 
+    std::cout << br_kr.position[1];
+    if (br_kr.position[1] != -99) {
+        if (br_kr.position[1] == 1) {
+            window.draw(f.show_F(sprite1, lo.Texturs_krest, 275, 93));
+        }
+        else {
+            window.draw(f.show_F(sprite1, lo.Texturs_nolik, 275, 93));
+        }
+    }
+
+    if (br_kr.position[2] != -99) {
+        if (br_kr.position[2] == 1) {
+            window.draw(f.show_F(sprite1, lo.Texturs_krest, 429, 93));
+        }
+        else {
+            window.draw(f.show_F(sprite1, lo.Texturs_nolik, 429, 93));
+        }
+    }
+
+    if (br_kr.position[3] != -99) {
+        if (br_kr.position[3] == 1) {
+            window.draw(f.show_F(sprite1, lo.Texturs_krest, 586, 93));
+        }
+        else {
+            window.draw(f.show_F(sprite1, lo.Texturs_nolik, 586, 93));
+        }
+    }
+
+    if (br_kr.position[4] != -99) {
+        if (br_kr.position[4] == 1) {
+            window.draw(f.show_F(sprite1, lo.Texturs_krest, 275, 250));
+        }
+        else {
+            window.draw(f.show_F(sprite1, lo.Texturs_nolik, 275, 250));
+        }
+    }
+
+    if (br_kr.position[5] != -99) {
+        if (br_kr.position[5] == 1) {
+            window.draw(f.show_F(sprite1, lo.Texturs_krest, 429, 250));
+        }
+        else {
+            window.draw(f.show_F(sprite1, lo.Texturs_nolik, 429, 250));
+        }
+    }
+
+    if (br_kr.position[6] != -99) {
+        if (br_kr.position[6] == 1) {
+            window.draw(f.show_F(sprite1, lo.Texturs_krest, 586, 250));
+        }
+        else {
+            window.draw(f.show_F(sprite1, lo.Texturs_nolik, 586, 250));
+        }
+    }
+
+    if (br_kr.position[7] != -99) {
+        if (br_kr.position[7] == 1) {
+            window.draw(f.show_F(sprite1, lo.Texturs_krest, 275, 407));
+        }
+        else {
+            window.draw(f.show_F(sprite1, lo.Texturs_nolik, 275, 407));
+        }
+    }
+
+    if (br_kr.position[8] != -99) {
+        if (br_kr.position[8] == 1) {
+            window.draw(f.show_F(sprite1, lo.Texturs_krest, 429, 407));
+        }
+        else {
+            window.draw(f.show_F(sprite1, lo.Texturs_nolik, 429, 407));
+        }
+    }
+
+    if (br_kr.position[9] != -99) {
+        if (br_kr.position[9] == 1) {
+            window.draw(f.show_F(sprite1, lo.Texturs_krest, 586, 407));
+        }
+        else {
+            window.draw(f.show_F(sprite1, lo.Texturs_nolik, 586, 407));
+        }
+    }
 
     l.button(350, 650, 300, 50, L"Назад", 0, window, lo.Texturs_fonB, lo.base_font, "boot6", ev);
 
+
+    br_kr.waint_clic(ev);
 
     window.display();
     c_e.eve(ev);
@@ -87,7 +192,7 @@ void scene::scena4(CFG& cfg, event& ev, Load& lo, L& l, F& f, custom_event& c_e,
     window.draw(f.show_F(sprite1, lo.Texturs_Logo, 186, 80));
 
 
-    l.button(350, 650, 300, 50, L"Назад", 0, window, lo.Texturs_fonB, lo.base_font, "boot6", ev);
+    l.button(350, 650, 300, 50, L"Выход", 0, window, lo.Texturs_fonB, lo.base_font, "boot6", ev);
 
 
     window.display();

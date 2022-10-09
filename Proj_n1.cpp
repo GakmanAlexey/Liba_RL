@@ -8,6 +8,7 @@
 #include "F.h"
 #include "custom_event.h"
 #include "scene.h"
+#include "brain_krest.h"
 
 int main()
 {
@@ -24,9 +25,10 @@ int main()
     lo.texturs();
     sf::Sprite sprite1;
     scene sc;
+    brain_krest br_kr;
     while (ev.windows_job)
     {
-        sc.main(cfg, ev, lo, l, f, c_e, window);
+        sc.main(cfg, ev, lo, l, f, c_e, window, br_kr);
     }
 
     return 0;

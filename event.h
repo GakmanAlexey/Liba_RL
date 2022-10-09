@@ -6,6 +6,7 @@
 class event
 {
 public:
+	bool mouse_flag_block_LKM = false;
 	bool windows_job = true;
 	std::vector <int> botton_x;
 	std::vector <int> botton_y;
