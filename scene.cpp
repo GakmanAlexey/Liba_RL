@@ -174,7 +174,9 @@ void scene::scena3(CFG& cfg, event& ev, Load& lo, L& l, F& f, custom_event& c_e,
     }
 
     l.button(350, 650, 300, 50, L"Назад", 0, window, lo.Texturs_fonB, lo.base_font, "boot6", ev);
-
+    sf::Text player_1;
+    sf::String pl1_text = L"Игрок 1";
+    window.draw(f.show_T(player_1, lo.base_font , 50, 400, pl1_text, 24, 0));
 
     br_kr.waint_clic(ev);
 
