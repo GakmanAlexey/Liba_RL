@@ -20,6 +20,7 @@ public:
 	void win(int id_user);
 
 	int winer_timer = 0;
+	int win_position = 0;
 };
 /*
 1 Создать поле

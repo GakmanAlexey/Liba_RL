@@ -102,65 +102,81 @@ void brain_krest::who_win() {
 	res = position[1] + position[2] + position[3];
 	if (res == 3) {
 		win(1);
+		win_position = 1;
 	}
 	else if (res == 6) {
 		win(2);
+		win_position = 1;
 	}
 
 	res = position[4] + position[5] + position[6];
 	if (res == 3) {
 		win(1);
+		win_position = 2;
 	}
 	else if (res == 6) {
 		win(2);
+		win_position = 2;
 	}
 
 	res = position[7] + position[8] + position[9];
 	if (res == 3) {
 		win(1);
+		win_position = 3;
 	}
 	else if (res == 6) {
 		win(2);
+		win_position = 3;
 	}
 
 	res = position[1] + position[4] + position[7];
 	if (res == 3) {
 		win(1);
+		win_position = 4;
 	}
 	else if (res == 6) {
 		win(2);
+		win_position = 4;
 	}
 
 	res = position[2] + position[5] + position[8];
 	if (res == 3) {
 		win(1);
+		win_position = 5;
 	}
 	else if (res == 6) {
 		win(2);
+		win_position = 5;
 	}
 
 	res = position[3] + position[6] + position[9];
 	if (res == 3) {
 		win(1);
+		win_position = 6;
 	}
 	else if (res == 6) {
 		win(2);
+		win_position = 6;
 	}
 
 	res = position[1] + position[5] + position[9];
 	if (res == 3) {
 		win(1);
+		win_position = 7;
 	}
 	else if (res == 6) {
 		win(2);
+		win_position = 7;
 	}
 
 	res = position[3] + position[5] + position[7];
 	if (res == 3) {
 		win(1);
+		win_position = 8;
 	}
 	else if (res == 6) {
 		win(2);
+		win_position = 8;
 
 	}
 };

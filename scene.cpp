@@ -70,6 +70,7 @@ void scene::scena3(CFG& cfg, event& ev, Load& lo, L& l, F& f, custom_event& c_e,
     uint64_t ms = duration_cast<std::chrono::milliseconds>(system_clock::now().time_since_epoch()).count();
     uint64_t ms2 = duration_cast<std::chrono::milliseconds>(system_clock::now().time_since_epoch()).count();
     sf::Sprite sprite1;
+    sf::Sprite sprite2;
     sf::Event evsf;
     ev.sf_ev(evsf, window);
     // ----------------------------------
@@ -185,7 +186,6 @@ void scene::scena3(CFG& cfg, event& ev, Load& lo, L& l, F& f, custom_event& c_e,
 
     br_kr.waint_clic(ev);
 
-    window.display();
     c_e.eve(ev);
 
     br_kr.who_win();
@@ -273,6 +273,30 @@ void scene::scena3(CFG& cfg, event& ev, Load& lo, L& l, F& f, custom_event& c_e,
                     window.draw(f.show_F(sprite1, lo.Texturs_nulik_black, 586, 407));
                 }
             }
+            if (br_kr.win_position == 1) {
+                window.draw(f.show_F(sprite2, lo.Texturs_w1, 0, 0));                
+            }
+            if (br_kr.win_position == 2) {
+                window.draw(f.show_F(sprite2, lo.Texturs_w2, 0, 0));
+            }
+            if (br_kr.win_position == 3) {
+                window.draw(f.show_F(sprite2, lo.Texturs_w3, 0, 0));
+            }
+            if (br_kr.win_position == 4) {
+                window.draw(f.show_F(sprite2, lo.Texturs_w4, 0, 0));
+            }
+            if (br_kr.win_position == 5) {
+                window.draw(f.show_F(sprite2, lo.Texturs_w5, 0, 0));
+            }
+            if (br_kr.win_position == 6) {
+                window.draw(f.show_F(sprite2, lo.Texturs_w6, 0, 0));
+            }
+            if (br_kr.win_position == 7) {
+                window.draw(f.show_F(sprite2, lo.Texturs_w7, 0, 0));
+            }
+            if (br_kr.win_position == 8) {
+                window.draw(f.show_F(sprite2, lo.Texturs_w8, 0, 0));
+            }
             window.display();
         }
         ms2 = duration_cast<std::chrono::milliseconds>(system_clock::now().time_since_epoch()).count();
@@ -282,6 +306,8 @@ void scene::scena3(CFG& cfg, event& ev, Load& lo, L& l, F& f, custom_event& c_e,
         
         br_kr.newGame();
     }
+
+    window.display();
 };
 void scene::scena4(CFG& cfg, event& ev, Load& lo, L& l, F& f, custom_event& c_e, sf::RenderWindow& window) {
     sf::Sprite sprite1;

@@ -40,6 +40,24 @@ public:
 	Image Img_nulik_black;
 	Texture Texturs_nulik_black;
 
+
+	Image Img_w1;
+	Texture Texturs_w1;
+	Image Img_w2;
+	Texture Texturs_w2;
+	Image Img_w3;
+	Texture Texturs_w3;
+	Image Img_w4;
+	Texture Texturs_w4;
+	Image Img_w5;
+	Texture Texturs_w5;
+	Image Img_w6;
+	Texture Texturs_w6;
+	Image Img_w7;
+	Texture Texturs_w7;
+	Image Img_w8;
+	Texture Texturs_w8;
+
 	void font();
 	void img();
 	void texturs();
