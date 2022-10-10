@@ -1,7 +1,9 @@
 #include "scene.h"
 #include "custom_event.h"
 #include "brain_krest.h"
+#include <chrono>
 
+using namespace std::chrono;
 void scene::main(CFG& cfg, event& ev, Load& lo, L& l, F& f, custom_event& c_e, sf::RenderWindow& window, brain_krest& br_kr) {
     if (c_e.focus_windows == 1) {
         scena1(cfg, ev, lo, l, f, c_e, window);
@@ -65,16 +67,15 @@ void scene::scena2(CFG& cfg, event& ev, Load& lo, L& l, F& f, custom_event& c_e,
 
 //играть вдвоем
 void scene::scena3(CFG& cfg, event& ev, Load& lo, L& l, F& f, custom_event& c_e, sf::RenderWindow& window, brain_krest &br_kr) {
-    
+    uint64_t ms = duration_cast<std::chrono::milliseconds>(system_clock::now().time_since_epoch()).count();
+    uint64_t ms2 = duration_cast<std::chrono::milliseconds>(system_clock::now().time_since_epoch()).count();
     sf::Sprite sprite1;
     sf::Event evsf;
     ev.sf_ev(evsf, window);
     // ----------------------------------
     window.clear();
     ev.boot_clear();
-    if (br_kr.winer_flag) {
 
-    }
     if (!scena3_start) {
         std::cout << "ddsadasdas";
         scena3_start = true;
@@ -180,11 +181,107 @@ void scene::scena3(CFG& cfg, event& ev, Load& lo, L& l, F& f, custom_event& c_e,
     sf::Text player_1;
     sf::String pl1_text = L"Игрок 1";
     window.draw(f.show_T(player_1, lo.base_font , 50, 400, pl1_text, 24, 0));
+    
 
     br_kr.waint_clic(ev);
 
     window.display();
     c_e.eve(ev);
+
+    br_kr.who_win();
+    int timed_x = 0;
+    while (br_kr.winer_flag) {
+        if (timed_x == 0) {
+            timed_x++;   
+            if (br_kr.position[1] != -99) {
+                if (br_kr.position[1] == 1) {
+                    window.draw(f.show_F(sprite1, lo.Texturs_crestic_black, 275, 93));
+                }
+                else {
+                    window.draw(f.show_F(sprite1, lo.Texturs_nulik_black, 275, 93));
+                }
+            }
+
+            if (br_kr.position[2] != -99) {
+                if (br_kr.position[2] == 1) {
+                    window.draw(f.show_F(sprite1, lo.Texturs_crestic_black, 429, 93));
+                }
+                else {
+                    window.draw(f.show_F(sprite1, lo.Texturs_nulik_black, 429, 93));
+                }
+            }
+
+            if (br_kr.position[3] != -99) {
+                if (br_kr.position[3] == 1) {
+                    window.draw(f.show_F(sprite1, lo.Texturs_crestic_black, 586, 93));
+                }
+                else {
+                    window.draw(f.show_F(sprite1, lo.Texturs_nulik_black, 586, 93));
+                }
+            }
+
+            if (br_kr.position[4] != -99) {
+                if (br_kr.position[4] == 1) {
+                    window.draw(f.show_F(sprite1, lo.Texturs_crestic_black, 275, 250));
+                }
+                else {
+                    window.draw(f.show_F(sprite1, lo.Texturs_nulik_black, 275, 250));
+                }
+            }
+
+            if (br_kr.position[5] != -99) {
+                if (br_kr.position[5] == 1) {
+                    window.draw(f.show_F(sprite1, lo.Texturs_crestic_black, 429, 250));
+                }
+                else {
+                    window.draw(f.show_F(sprite1, lo.Texturs_nulik_black, 429, 250));
+                }
+            }
+
+            if (br_kr.position[6] != -99) {
+                if (br_kr.position[6] == 1) {
+                    window.draw(f.show_F(sprite1, lo.Texturs_crestic_black, 586, 250));
+                }
+                else {
+                    window.draw(f.show_F(sprite1, lo.Texturs_nulik_black, 586, 250));
+                }
+            }
+
+            if (br_kr.position[7] != -99) {
+                if (br_kr.position[7] == 1) {
+                    window.draw(f.show_F(sprite1, lo.Texturs_crestic_black, 275, 407));
+                }
+                else {
+                    window.draw(f.show_F(sprite1, lo.Texturs_nulik_black, 275, 407));
+                }
+            }
+
+            if (br_kr.position[8] != -99) {
+                if (br_kr.position[8] == 1) {
+                    window.draw(f.show_F(sprite1, lo.Texturs_crestic_black, 429, 407));
+                }
+                else {
+                    window.draw(f.show_F(sprite1, lo.Texturs_nulik_black, 429, 407));
+                }
+            }
+
+            if (br_kr.position[9] != -99) {
+                if (br_kr.position[9] == 1) {
+                    window.draw(f.show_F(sprite1, lo.Texturs_crestic_black, 586, 407));
+                }
+                else {
+                    window.draw(f.show_F(sprite1, lo.Texturs_nulik_black, 586, 407));
+                }
+            }
+            window.display();
+        }
+        ms2 = duration_cast<std::chrono::milliseconds>(system_clock::now().time_since_epoch()).count();
+        if ((ms2 - ms) > 1000) {
+            br_kr.winer_flag = false;
+        }
+        
+        br_kr.newGame();
+    }
 };
 void scene::scena4(CFG& cfg, event& ev, Load& lo, L& l, F& f, custom_event& c_e, sf::RenderWindow& window) {
     sf::Sprite sprite1;

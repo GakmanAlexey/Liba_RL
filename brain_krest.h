@@ -18,6 +18,8 @@ public:
 	void who_win();
 	void swap_plauer();
 	void win(int id_user);
+
+	int winer_timer = 0;
 };
 /*
 1 Создать поле

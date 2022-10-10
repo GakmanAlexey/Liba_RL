@@ -35,63 +35,63 @@ void brain_krest::waint_clic(event& ev) {
 		if (ev.focus_zone == "zone1") {
 			if (position[1] == -99) {
 				position[1] = ocher;
-				who_win();
+				//who_win();
 				swap_plauer();
 			}
 		}
 		if (ev.focus_zone == "zone2") {
 			if (position[2] == -99) {
 				position[2] = ocher;
-				who_win();
+				//who_win();
 				swap_plauer();
 			}
 		}
 		if (ev.focus_zone == "zone3") {
 			if (position[3] == -99) {
 				position[3] = ocher;
-				who_win();
+				//who_win();
 				swap_plauer();
 			}
 		}
 		if (ev.focus_zone == "zone4") {
 			if (position[4] == -99) {
 				position[4] = ocher;
-				who_win();
+				//who_win();
 				swap_plauer();
 			}
 		}
 		if (ev.focus_zone == "zone5") {
 			if (position[5] == -99) {
 				position[5] = ocher;
-				who_win();
+				//who_win();
 				swap_plauer();
 			}
 		}
 		if (ev.focus_zone == "zone6") {
 			if (position[6] == -99) {
 				position[6] = ocher;
-				who_win();
+				//who_win();
 				swap_plauer();
 			}
 		}
 		if (ev.focus_zone == "zone7") {
 			if (position[7] == -99) {
 				position[7] = ocher;
-				who_win();
+				//who_win();
 				swap_plauer();
 			}
 		}
 		if (ev.focus_zone == "zone8") {
 			if (position[8] == -99) {
 				position[8] = ocher;
-				who_win();
+				//who_win();
 				swap_plauer();
 			}
 		}
 		if (ev.focus_zone == "zone9") {
 			if (position[9] == -99) {
 				position[9] = ocher;
-				who_win();
+				//who_win();
 				swap_plauer();
 			}
 		}
@@ -186,5 +186,4 @@ void brain_krest::win(int id_user) {
 	}
 	winer_flag = true;
 
-	newGame();
 };
