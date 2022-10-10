@@ -101,82 +101,66 @@ void brain_krest::who_win() {
 	int res = 0;
 	res = position[1] + position[2] + position[3];
 	if (res == 3) {
-		win_user_1++;
-		newGame();
+		win(1);
 	}
 	else if (res == 6) {
-		win_user_2++;
-		newGame();
+		win(2);
 	}
 
 	res = position[4] + position[5] + position[6];
 	if (res == 3) {
-		win_user_1++;
-		newGame();
+		win(1);
 	}
 	else if (res == 6) {
-		win_user_2++;
-		newGame();
+		win(2);
 	}
 
 	res = position[7] + position[8] + position[9];
 	if (res == 3) {
-		win_user_1++;
-		newGame();
+		win(1);
 	}
 	else if (res == 6) {
-		win_user_2++;
-		newGame();
+		win(2);
 	}
 
 	res = position[1] + position[4] + position[7];
 	if (res == 3) {
-		win_user_1++;
-		newGame();
+		win(1);
 	}
 	else if (res == 6) {
-		win_user_2++;
-		newGame();
+		win(2);
 	}
 
 	res = position[2] + position[5] + position[8];
 	if (res == 3) {
-		win_user_1++;
-		newGame();
+		win(1);
 	}
 	else if (res == 6) {
-		win_user_2++;
-		newGame();
+		win(2);
 	}
 
 	res = position[3] + position[6] + position[9];
 	if (res == 3) {
-		win_user_1++;
-		newGame();
+		win(1);
 	}
 	else if (res == 6) {
-		win_user_2++;
-		newGame();
+		win(2);
 	}
 
 	res = position[1] + position[5] + position[9];
 	if (res == 3) {
-		win_user_1++;
-		newGame();
+		win(1);
 	}
 	else if (res == 6) {
-		win_user_2++;
-		newGame();
+		win(2);
 	}
 
 	res = position[3] + position[5] + position[7];
 	if (res == 3) {
-		win_user_1++;
-		newGame();
+		win(1);
 	}
 	else if (res == 6) {
-		win_user_2++;
-		newGame();
+		win(2);
 
 	}
 };
@@ -188,4 +172,19 @@ void brain_krest::swap_plauer() {
 	else {
 		ocher = 1;
 	}
+};
+
+
+void brain_krest::win(int id_user) {
+	if (id_user == 1) {
+		win_user_1++;
+		winer_flag_id = 1;
+	}
+	else {
+		win_user_2++;
+		winer_flag_id = 2;
+	}
+	winer_flag = true;
+
+	newGame();
 };
