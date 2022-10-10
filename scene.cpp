@@ -179,9 +179,7 @@ void scene::scena3(CFG& cfg, event& ev, Load& lo, L& l, F& f, custom_event& c_e,
     }
 
     l.button(350, 650, 300, 50, L"Назад", 0, window, lo.Texturs_fonB, lo.base_font, "boot6", ev);
-    sf::Text player_1;
-    sf::String pl1_text = L"Игрок 1";
-    window.draw(f.show_T(player_1, lo.base_font , 50, 400, pl1_text, 24, 0));
+    
     
 
     br_kr.waint_clic(ev);
@@ -303,10 +301,121 @@ void scene::scena3(CFG& cfg, event& ev, Load& lo, L& l, F& f, custom_event& c_e,
         if ((ms2 - ms) > 1000) {
             br_kr.winer_flag = false;
         }
-        
         br_kr.newGame();
     }
 
+    if (br_kr.flag_reload) {
+        if (br_kr.position[1] != -99) {
+            if (br_kr.position[1] == 1) {
+                window.draw(f.show_F(sprite1, lo.Texturs_crestic_black, 275, 93));
+            }
+            else {
+                window.draw(f.show_F(sprite1, lo.Texturs_nulik_black, 275, 93));
+            }
+        }
+
+        if (br_kr.position[2] != -99) {
+            if (br_kr.position[2] == 1) {
+                window.draw(f.show_F(sprite1, lo.Texturs_crestic_black, 429, 93));
+            }
+            else {
+                window.draw(f.show_F(sprite1, lo.Texturs_nulik_black, 429, 93));
+            }
+        }
+
+        if (br_kr.position[3] != -99) {
+            if (br_kr.position[3] == 1) {
+                window.draw(f.show_F(sprite1, lo.Texturs_crestic_black, 586, 93));
+            }
+            else {
+                window.draw(f.show_F(sprite1, lo.Texturs_nulik_black, 586, 93));
+            }
+        }
+
+        if (br_kr.position[4] != -99) {
+            if (br_kr.position[4] == 1) {
+                window.draw(f.show_F(sprite1, lo.Texturs_crestic_black, 275, 250));
+            }
+            else {
+                window.draw(f.show_F(sprite1, lo.Texturs_nulik_black, 275, 250));
+            }
+        }
+
+        if (br_kr.position[5] != -99) {
+            if (br_kr.position[5] == 1) {
+                window.draw(f.show_F(sprite1, lo.Texturs_crestic_black, 429, 250));
+            }
+            else {
+                window.draw(f.show_F(sprite1, lo.Texturs_nulik_black, 429, 250));
+            }
+        }
+
+        if (br_kr.position[6] != -99) {
+            if (br_kr.position[6] == 1) {
+                window.draw(f.show_F(sprite1, lo.Texturs_crestic_black, 586, 250));
+            }
+            else {
+                window.draw(f.show_F(sprite1, lo.Texturs_nulik_black, 586, 250));
+            }
+        }
+
+        if (br_kr.position[7] != -99) {
+            if (br_kr.position[7] == 1) {
+                window.draw(f.show_F(sprite1, lo.Texturs_crestic_black, 275, 407));
+            }
+            else {
+                window.draw(f.show_F(sprite1, lo.Texturs_nulik_black, 275, 407));
+            }
+        }
+
+        if (br_kr.position[8] != -99) {
+            if (br_kr.position[8] == 1) {
+                window.draw(f.show_F(sprite1, lo.Texturs_crestic_black, 429, 407));
+            }
+            else {
+                window.draw(f.show_F(sprite1, lo.Texturs_nulik_black, 429, 407));
+            }
+        }
+
+        if (br_kr.position[9] != -99) {
+            if (br_kr.position[9] == 1) {
+                window.draw(f.show_F(sprite1, lo.Texturs_crestic_black, 586, 407));
+            }
+            else {
+                window.draw(f.show_F(sprite1, lo.Texturs_nulik_black, 586, 407));
+            }
+        }
+
+        window.display();
+        br_kr.flag_reload = false;
+        while ((ms2 - ms) < 1000) {
+            ms2 = duration_cast<std::chrono::milliseconds>(system_clock::now().time_since_epoch()).count();
+        }
+
+        br_kr.newGame();
+    }
+    sf::Text pl1;
+    sf::String pl1_text = L"Игрок X";
+    window.draw(f.show_T(pl1, lo.ustroke_font, 30, 620, pl1_text, 24,0));
+    sf::Text pl1_1;
+    sf::String pl1_1text = L"Побед";
+    window.draw(f.show_T(pl1_1, lo.ustroke_font, 30, 650, pl1_1text, 22, 0));
+    sf::Text pl1_2;
+    std::string spl1 = std::to_string(br_kr.win_user_1);
+    sf::String pl1_2text = std::string(spl1);
+    window.draw(f.show_T(pl1_2, lo.ustroke_font, 130, 650, pl1_2text, 22, 0));
+
+
+    sf::Text pl2;
+    sf::String pl2_text = L"Игрок О";
+    window.draw(f.show_T(pl2, lo.ustroke_font, 840, 620, pl2_text, 24, 0));
+    sf::Text pl2_1;
+    sf::String pl2_1text = L"Побед";
+    window.draw(f.show_T(pl2_1, lo.ustroke_font, 840, 650, pl2_1text, 22, 0));
+    sf::Text pl2_2;
+    std::string spl2 = std::to_string(br_kr.win_user_2);
+    sf::String pl2_2text = std::string(spl2);
+    window.draw(f.show_T(pl2_2, lo.ustroke_font, 940, 650, pl2_2text, 22, 0));
     window.display();
 };
 void scene::scena4(CFG& cfg, event& ev, Load& lo, L& l, F& f, custom_event& c_e, sf::RenderWindow& window) {

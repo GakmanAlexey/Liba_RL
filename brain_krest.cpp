@@ -1,6 +1,9 @@
 #include "brain_krest.h"
 #include "event.h"
 #include <iostream>
+#include <chrono>
+
+using namespace std::chrono;
 
 void brain_krest::preload() {
 	position.push_back(0);
@@ -179,6 +182,11 @@ void brain_krest::who_win() {
 		win_position = 8;
 
 	}
+	res = position[1] + position[2] + position[3] + position[4] + position[5] + position[6] + position[7] + position[8] + position[9];
+	if (res > 0) {
+		flag_reload = true;
+	}
+
 };
 
 void brain_krest::swap_plauer() {

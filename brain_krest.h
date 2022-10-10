@@ -21,6 +21,9 @@ public:
 
 	int winer_timer = 0;
 	int win_position = 0;
+
+	int round = 0;
+	bool flag_reload = false;
 };
 /*
 1 Создать поле
